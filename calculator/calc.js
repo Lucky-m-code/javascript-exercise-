@@ -63,12 +63,12 @@ function max(arr) {
 (() => {
     let arr = new Array();
     let input = prompt('calculator!!\nTo addtion enter 1\nTo multiplication enter 2\n To division enter 3\n To subtraction enter 4 \n To minimum enter 5 \n To maximum enter 6 \n To square root enter 7');
-
-    if (input == "1" || input == "2") {
+    if (input == "1" || input == "2" || input == "5" || input == "6") {
         var amountOfNum = prompt("numbers you want to operate on: ");
         for (let i = 0; i < parseInt(amountOfNum); i++) {
             arr[i] = prompt("Your Number " + (i + 1));
         }
+
         if (input == "1") {
             result = add(arr);
             console.log(result);
@@ -77,42 +77,42 @@ function max(arr) {
             result = mul(arr);
             console.log(result);
         }
-        else {
-            console.log("Invalid");
-        }
-    }
-    else if (input == "4" || input == "3") {
-        if (input == "4") {
 
-            result = sub(arr);
+
+        else if (input == "5") {
+
+            result = min(arr);
             console.log(result);
+
         }
-        else if (input == "3") {
-            var num1 = parseInt(prompt(" first number "));
-            var num2 = parseInt(prompt(" second number "));
-            result = div(num1, num2);
+        else if (input == "6") {
+
+            result = max(arr);
             console.log(result);
+
         }
     }
-    else if (input == "5") {
+    else if (input == "4") {
 
-        result = min(arr);
+        var num1 = parseInt(prompt(" first number "));
+        var num2 = parseInt(prompt(" second number "));
+        result = sub(num1, num2);
         console.log(result);
-
-    }
-    else if (input == "6") {
-
-        result = max(arr);
-        console.log(result);
-
     }
 
     else if (input == "7") {
-        var num = parseInt(prompt(" f.number "));
-        result = (num);
+        var num = parseInt(prompt(" first number "));
+        result = squareRoot(num);
         console.log(result);
 
     }
+    else if (input == "3") {
+        var num1 = parseInt(prompt(" first number "));
+        var num2 = parseInt(prompt(" second number "));
+        result = div(num1, num2);
+        console.log(result);
+    }
+
     else {
         console.log("Invalid")
     }
